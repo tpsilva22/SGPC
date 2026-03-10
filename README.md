@@ -1,116 +1,50 @@
-# ⛽ Sistema de Gestão de Postos de Combustível
-Um sistema de gestão desenvolvido para postos de combustível, permitindo administrar utilizadores, vendas, serviços, fidelização de clientes e agendamentos.  
-O sistema tem um administrador único e define diferentes tipos de utilizadores, cada um com permissões específicas.  
+# Gas Station Management System
 
----
+A comprehensive management solution for gas stations designed to streamline administrative tasks, sales, services, and customer loyalty programs.
 
-## 📖 Visão Geral
-Este projeto implementa um sistema multi-utilizador com autenticação e perfis diferenciados.  
-Cada perfil possui funcionalidades próprias que abrangem desde gestão administrativa até operações de cliente.  
+## Overview
+This project implements a multi-user platform with Role-Based Access Control (RBAC). The system allows for distinct operational flows, ranging from high-level administration to customer-facing features like service scheduling and reward redemption.
 
-Funcionalidades principais:
-- Gestão de utilizadores e autenticação  
-- Registo de vendas e inserção de produtos  
-- Agendamento e atribuição de serviços  
-- Fidelização e resgate de prémios  
-- Alertas operacionais para bombas  
-- Encerramento e autoexclusão de contas  
+## Key Features
+* **Authentication & RBAC:** Secure login with six predefined permission levels.
+* **Sales Management:** Real-time registration of sales and product inventory.
+* **Service Scheduling:** Assignment and tracking of technical services.
+* **Loyalty Program:** Points accumulation, rewards catalog, and automated redemption.
+* **Operational Monitoring:** Pump status alerts and availability management.
 
----
+## Tech Stack
+* **Backend:** PHP
+* **Frontend:** HTML, CSS, JavaScript, Bootstrap
+* **Database:** MySQL (Modeled via MySQL Workbench)
+* **Environment:** XAMPP (Apache & MySQL)
 
-## 🎯 Objetivos de Aprendizagem
-- Consolidar conhecimentos em desenvolvimento web com **PHP, HTML, CSS e JavaScript**  
-- Integrar **bases de dados MySQL** com interface em PHP  
-- Aplicar **frameworks e bibliotecas** (Bootstrap)  
-- Usar **XAMPP** como ambiente de servidor local  
-- Organizar perfis de utilizadores com permissões distintas  
+## User Roles
+| Role | Main Responsibilities |
+| :--- | :--- |
+| **Administrator** | Full user management and account oversight. |
+| **Station Manager** | Pump alert monitoring and operational data. |
+| **Operator** | Sales registration and product entry. |
+| **Admin Staff** | Service assignment and loyalty program management. |
+| **Service Staff** | Execution of scheduled services and system commands. |
+| **Customer** | Service booking and points/rewards consultation. |
 
----
+## Database Structure
+The relational database consists of the following core tables:
+* **Users:** `utilizadores`, `login`.
+* **Sales:** `venda`, `venda_item`, `produto`.
+* **Services:** `servico`, `agendamento`, `indisponibilidade`.
+* **Loyalty:** `cartao_fidelidade`, `movimento_cartao`.
+* **Infrastructure:** `bomba`, `alerta`.
 
-## 📊 Base de Dados
-O sistema utiliza **MySQL Workbench** para gerir e modelar a base de dados.  
-Tabelas principais incluem:
-- `utilizadores`  
-- `servico`  
-- `produto`  
-- `venda` (total da venda) 
-- `venda_item` (individualização do produto)
-- `login`
-- `movimento_cartao`
-- `indisponibilidade`    
-- `cartao_fidelidade`  
-- `bomba`
-- `agendamento`
-- `alerta`      
+## Installation and Setup
+1. **Repository:** Move the project files to the XAMPP `htdocs` directory.
+2. **Database:** Import the provided SQL file using MySQL Workbench or phpMyAdmin.
+3. **Server:** Start Apache and MySQL modules in the XAMPP Control Panel.
+4. **Access:** Open your browser and navigate to `http://localhost/SistemaGestaoPosto`.
 
----
-
-## 🛠️ Stack Tecnológica
-- **Frontend**: HTML, CSS, JavaScript, Bootstrap  
-- **Backend**: PHP 
-- **Base de Dados**: MySQL  
-- **Servidor Local**: XAMPP (Apache + MySQL)  
-- **IDE**: Visual Studio Code  
-
----
-
-## 🚀 Instruções de Instalação
-
-### Pré-requisitos
-- [XAMPP](https://www.apachefriends.org/index.html) instalado  
-- MySQL Workbench instalado  
-
-### Passos
-1. Colocar os ficheiros do projeto na pasta `htdocs` do XAMPP.  
-2. Criar a base de dados no **MySQL Workbench** e importar o ficheiro SQL.  
-3. Iniciar **Apache** e **MySQL** no painel do XAMPP.  
-4. Aceder via navegador:  
-
----
-
-## 👥 Perfis de Utilizador e Funcionalidades
-
-### 👤 Administrador
-- Gerir utilizadores  
-- Registar novos utilizadores  
-- Editar dados pessoais  
-- Autoexcluir conta  
-
-### 🏪 Gerente de Posto
-- Ver alertas de bombas  
-- Editar dados pessoais  
-
-### ⛽ Operador
-- Registar vendas  
-- Inserir produtos  
-- Consultar histórico de pontos  
-- Editar dados pessoais  
-
-### 📋 Funcionário Administrativo
-- Inserir serviços  
-- Atribuir funcionário a serviços  
-- Gerir fidelização de clientes  
-- Editar dados pessoais  
-
-### 🔧 Funcionário de Serviços
-- Ver agendamentos  
-- Executar comandos LSS  
-- Editar dados pessoais  
-
-### 🧑‍💼 Cliente
-- Agendar serviços  
-- Consultar catálogo de prémios  
-- Consultar histórico de pontos  
-- Resgatar prémios  
-- Ver agendamentos  
-- Editar dados pessoais  
-- Encerrar conta  
-
----
-
-## 📌 Como Executar
-1. Iniciar Apache e MySQL no painel do XAMPP.  
-2. Garantir que a base de dados está criada e populada.  
-3. Aceder pelo navegador ao endereço configurado (ex.: `http://localhost/SistemaGestaoPosto`).  
-
----
+## Learning Objectives
+This project was developed to consolidate expertise in:
+* Full-stack web development using PHP and MySQL.
+* Responsive UI design with Bootstrap.
+* Implementation of complex permission-based logic.
+* Database modeling and relational integrity.
